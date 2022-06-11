@@ -29,11 +29,21 @@ public class UserManager implements UserService{
 	}
 
 	@Override
-	public DataResult<User> findByEmail(String email) {
+	public User findByUserName(String email) {
 		// TODO Auto-generated method stub
-		return new SuccessDataResult<User>(this.userDao.findByEmail(email),"kullanici bulundu");
+		return userDao.findByUserName(email);
 	}
-
+	public User getOneUserByUserName(String userName) {
+		// TODO Auto-generated method stub
+		return userDao.findByUserName(userName);
+	}
+	public Result saveOneUser(User newUser) {
+		this.userDao.save(newUser);
+		return new SuccessResult("Kullanici eklendi");
+	}
+	public User getOneUserById(Long userId) {
+		return userDao.findById(userId).orElse(null);
+	}
 
 
 }
