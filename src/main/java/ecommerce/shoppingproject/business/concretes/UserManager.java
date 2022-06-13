@@ -1,5 +1,7 @@
 package ecommerce.shoppingproject.business.concretes;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,7 @@ import ecommerce.shoppingproject.core.utilities.results.DataResult;
 import ecommerce.shoppingproject.core.utilities.results.Result;
 import ecommerce.shoppingproject.core.utilities.results.SuccessDataResult;
 import ecommerce.shoppingproject.core.utilities.results.SuccessResult;
+import ecommerce.shoppingproject.entities.concretes.Product;
 
 @Service
 public class UserManager implements UserService{
@@ -43,6 +46,12 @@ public class UserManager implements UserService{
 	}
 	public User getOneUserById(Long userId) {
 		return userDao.findById(userId).orElse(null);
+	}
+
+	@Override
+	public DataResult<List<User>> getAll() {
+		// TODO Auto-generated method stub
+		return new SuccessDataResult<List<User>>(this.userDao.findAll(),"ürün listelendi");
 	}
 
 

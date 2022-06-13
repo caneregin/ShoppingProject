@@ -6,13 +6,13 @@ import KodlamaIoTextInput from '../utilities/customFormControls/KodlamaIoTextInp
 import axios from 'axios'
 
 export default function ProductAdd() {
-    const initialValues = { productName: "", productDetail: "", unitPrice: 10, unitInStock: 100  }
+    const initialValues = { productName: "", productDetail: "", unitPrice: 10, unitsInStock: 100  }
 
     const schema = Yup.object({
         productName: Yup.string().required("Ürün adı zorunlu"),
         productDetail: Yup.string().required("Ürün adı zorunlu"),
         unitPrice: Yup.number().required("Ürün fiyatı zorunlu"),
-        unitInStock: Yup.number().required("Ürün fiyatı zorunlu")
+        unitsInStock: Yup.number().required("Ürün fiyatı zorunlu")
     })
 
     return (

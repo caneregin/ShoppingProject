@@ -2,6 +2,7 @@ package ecommerce.shoppingproject.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -12,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
@@ -22,6 +24,7 @@ import ecommerce.shoppingproject.security.JwtAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
+@CrossOrigin
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private UserDetailsServiceImpl userDetailsService;
@@ -59,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("*");
+        config.addAllowedOriginPattern("*");
         config.addAllowedHeader("*");
         config.addAllowedMethod("OPTIONS");
         config.addAllowedMethod("HEAD");
@@ -81,7 +84,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     		.exceptionHandling().authenticationEntryPoint(handler).and()
     		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
     		.authorizeRequests()
+    		.antMatchers(HttpMethod.GET, "/api/users/getAll")
+    		.permitAll()
+    		.antMatchers(HttpMethod.POST, "/api/products/add")
+    		.permitAll()
     		.antMatchers("/auth/**")
+    		.permitAll()
+    		.antMatchers(HttpMethod.POST,"/auth/login")
+    		.permitAll()
+    		.antMatchers(HttpMethod.POST,"/auth/register")
     		.permitAll()
     		.anyRequest().authenticated();
     		
