@@ -44,7 +44,6 @@ public class AuthController {
 	public AuthResponse login(@RequestBody UserRequest loginRequest) {
 		UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(loginRequest.getUserName(), loginRequest.getPassword());
 		System.out.println(authToken);
-		System.out.println("gecti1");
 		Authentication auth = authenticationManager.authenticate(authToken);
 		System.out.println("gecti2"+auth);
 		SecurityContextHolder.getContext().setAuthentication(auth);
