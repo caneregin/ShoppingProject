@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -45,6 +47,18 @@ public class UsersController {
 	public DataResult<List<User>> getAll(){
 		return this.userService.getAll();
 	}
+	@GetMapping("/findByUserid")
+	public User findByUserid(@RequestParam Long userid){
+		return userService.findByUserid(userid);	
+	}
+	@PutMapping("/updateCart")
+	public void updateCart(@RequestParam String currentCart,@RequestParam Long userid) {
+		userService.updateCart(currentCart, userid);
+	}
+	/*@PostMapping(value="/addItem")
+	public ResponseEntity<?> addItem(@RequestBody String additem) {
+		return ResponseEntity.ok(this.userService.addItem(additem));
+	}*/
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ErrorDataResult<Object> handleValidationException(MethodArgumentNotValidException exceptions){

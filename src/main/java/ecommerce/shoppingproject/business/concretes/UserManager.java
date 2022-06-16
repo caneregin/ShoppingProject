@@ -54,5 +54,24 @@ public class UserManager implements UserService{
 		return new SuccessDataResult<List<User>>(this.userDao.findAll(),"ürün listelendi");
 	}
 
+	@Override
+	public User findByUserid(Long userid) {
+		// TODO Auto-generated method stub
+		return userDao.findByUserid(userid);
+	}
+
+	@Override
+	public void updateCart(String currentCart, Long userid) {
+		// TODO Auto-generated method stub
+		userDao.updateCart(currentCart, userid);
+	}
+
+
+	/*@Override
+	public User addItem(String additem) {
+		// TODO Auto-generated method stub
+		return userDao.addItem(additem)
+	}*/
+
 
 }

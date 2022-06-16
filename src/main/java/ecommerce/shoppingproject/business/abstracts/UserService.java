@@ -11,4 +11,8 @@ public interface UserService {
 	//DataResult<User> findBy(String email);
 	User findByUserName(String userName);
 	DataResult<List<User>> getAll();
+	User findByUserid(Long userid);
+	//User addItem(String additem);
+	public void updateCart(String currentCart,Long userid);
+	
 }

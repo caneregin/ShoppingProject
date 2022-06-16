@@ -17,4 +17,12 @@ public class User {
 	Long userid;
 	String userName;
 	String password;
+	String firstName;
+	String lastName;
+	String email;
+	String address;
+	String userPhoto;
+	String orders;
+	String currentCart;
+	String authorityLevel;
 }
