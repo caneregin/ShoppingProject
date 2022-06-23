@@ -66,6 +66,14 @@ public class UserManager implements UserService{
 		userDao.updateCart(currentCart, userid);
 	}
 
+	@Override
+	public String findByUseridForCurrentCart(Long userid) {
+		// TODO Auto-generated method stub
+		return userDao.findByUseridForCurrentCart(userid);
+	}
+
+
+
 
 	/*@Override
 	public User addItem(String additem) {

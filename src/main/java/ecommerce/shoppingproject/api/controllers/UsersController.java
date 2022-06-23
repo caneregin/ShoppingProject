@@ -52,8 +52,13 @@ public class UsersController {
 		return userService.findByUserid(userid);	
 	}
 	@PutMapping("/updateCart")
-	public void updateCart(@RequestParam String currentCart,@RequestParam Long userid) {
+	public void updateCart(@RequestBody String currentCart,@RequestParam Long userid) {
 		userService.updateCart(currentCart, userid);
+		System.out.println(currentCart+userid);
+	}
+	@GetMapping("/findByUseridForCurrentCart")
+	public String findByUseridForCurrentCart(@RequestParam Long userid){
+		return userService.findByUseridForCurrentCart(userid);	
 	}
 	/*@PostMapping(value="/addItem")
 	public ResponseEntity<?> addItem(@RequestBody String additem) {

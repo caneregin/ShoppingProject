@@ -11,7 +11,7 @@ import ecommerce.shoppingproject.core.entities.User;
 import ecommerce.shoppingproject.entities.concretes.Product;
 
 public interface UserDao extends JpaRepository<User,Long>{
-	
+
 	User findByUserName(String userName);
 	User findByUserid(Long userid);
 	//User addItem(String additem);
@@ -19,4 +19,7 @@ public interface UserDao extends JpaRepository<User,Long>{
 	@Transactional
 	@Query("UPDATE User SET currentCart = :currentCart where userid = :userid")
 	public void updateCart(String currentCart, long userid);
+	
+	@Query("Select currentCart FROM User u where userid = :userid")
+	String findByUseridForCurrentCart(Long userid);
 }

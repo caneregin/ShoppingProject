@@ -14,5 +14,6 @@ public interface UserService {
 	User findByUserid(Long userid);
 	//User addItem(String additem);
 	public void updateCart(String currentCart,Long userid);
+	String findByUseridForCurrentCart(Long userid);
 	
 }
