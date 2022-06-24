@@ -37,6 +37,10 @@ public class ProductsController {
 	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails(){
 		return this.productService.getProductWithCategoryDetails();
 	}
+	@GetMapping("/getProductWithCategoryDetailsAccordingToCategoryName")
+	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetailsAccordingToCategoryName(@RequestParam String categoryName){
+		return this.productService.getProductWithCategoryDetailsAccordingToCategoryName(categoryName);
+	}
 	@PostMapping("/add")
 	public Result add(@RequestBody Product product){
 		return this.productService.add(product);

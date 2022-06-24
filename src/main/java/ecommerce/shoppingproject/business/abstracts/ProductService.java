@@ -30,4 +30,6 @@ public interface ProductService {
 	DataResult<List<Product>> getByNameAndCategory(String productName, int categoryId);
 	
 	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
+	
+	DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetailsAccordingToCategoryName(String categoryName);
 }

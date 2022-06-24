@@ -5,11 +5,16 @@ public class ProductWithCategoryDto {
 	private int id;
 	private String productName;
 	private String categoryName;
-	public ProductWithCategoryDto(int id, String productName, String categoryName) {
+	private String productDetail;
+	private double unitPrice;
+	public ProductWithCategoryDto(int id, String productName, String categoryName, String productDetail,
+			double unitPrice) {
 		super();
 		this.id = id;
 		this.productName = productName;
 		this.categoryName = categoryName;
+		this.productDetail = productDetail;
+		this.unitPrice = unitPrice;
 	}
 	public int getId() {
 		return id;
@@ -29,4 +34,17 @@ public class ProductWithCategoryDto {
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
 	}
+	public String getProductDetail() {
+		return productDetail;
+	}
+	public void setProductDetail(String productDetail) {
+		this.productDetail = productDetail;
+	}
+	public double getUnitPrice() {
+		return unitPrice;
+	}
+	public void setUnitPrice(double unitPrice) {
+		this.unitPrice = unitPrice;
+	}
+	
 }
