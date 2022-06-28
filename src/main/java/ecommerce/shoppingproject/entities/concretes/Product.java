@@ -25,6 +25,15 @@ public class Product {
 	@Column(name="product_detail")
 	private String productDetail;
 	
+	@Column(name="product_brandname")
+	private String productBrandname;
+	
+	@Column(name="product_shortname")
+	private String productShortname;
+	
+	@Column(name="product_image")
+	private String productImage;
+	
 	@Column(name="unit_price")
 	private double unitPrice;	
 	
@@ -37,12 +46,15 @@ public class Product {
 	
 	public Product() {}
 
-	public Product(int productId, String productName, String productDetail, double unitPrice, double unitsInStock,
-			Category category) {
+	public Product(int productId, String productName, String productDetail, String productBrandname,
+			String productShortname, String productImage, double unitPrice, double unitsInStock, Category category) {
 		super();
 		this.productId = productId;
 		this.productName = productName;
 		this.productDetail = productDetail;
+		this.productBrandname = productBrandname;
+		this.productShortname = productShortname;
+		this.productImage = productImage;
 		this.unitPrice = unitPrice;
 		this.unitsInStock = unitsInStock;
 		this.category = category;
@@ -72,6 +84,30 @@ public class Product {
 		this.productDetail = productDetail;
 	}
 
+	public String getProductBrandname() {
+		return productBrandname;
+	}
+
+	public void setProductBrandname(String productBrandname) {
+		this.productBrandname = productBrandname;
+	}
+
+	public String getProductShortname() {
+		return productShortname;
+	}
+
+	public void setProductShortname(String productShortname) {
+		this.productShortname = productShortname;
+	}
+
+	public String getProductImage() {
+		return productImage;
+	}
+
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
+	}
+
 	public double getUnitPrice() {
 		return unitPrice;
 	}
@@ -95,4 +131,6 @@ public class Product {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+
 }

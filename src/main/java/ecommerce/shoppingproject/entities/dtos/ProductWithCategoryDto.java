@@ -7,14 +7,20 @@ public class ProductWithCategoryDto {
 	private String categoryName;
 	private String productDetail;
 	private double unitPrice;
+	private String productBrandname;
+	private String productShortname;
+	private String productImage;
 	public ProductWithCategoryDto(int id, String productName, String categoryName, String productDetail,
-			double unitPrice) {
+			double unitPrice, String productBrandname, String productShortname, String productImage) {
 		super();
 		this.id = id;
 		this.productName = productName;
 		this.categoryName = categoryName;
 		this.productDetail = productDetail;
 		this.unitPrice = unitPrice;
+		this.productBrandname = productBrandname;
+		this.productShortname = productShortname;
+		this.productImage = productImage;
 	}
 	public int getId() {
 		return id;
@@ -45,6 +51,24 @@ public class ProductWithCategoryDto {
 	}
 	public void setUnitPrice(double unitPrice) {
 		this.unitPrice = unitPrice;
+	}
+	public String getProductBrandname() {
+		return productBrandname;
+	}
+	public void setProductBrandname(String productBrandname) {
+		this.productBrandname = productBrandname;
+	}
+	public String getProductShortname() {
+		return productShortname;
+	}
+	public void setProductShortname(String productShortname) {
+		this.productShortname = productShortname;
+	}
+	public String getProductImage() {
+		return productImage;
+	}
+	public void setProductImage(String productImage) {
+		this.productImage = productImage;
 	}
 	
 }
