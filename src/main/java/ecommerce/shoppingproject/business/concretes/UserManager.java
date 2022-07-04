@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ecommerce.shoppingproject.business.abstracts.UserService;
 import ecommerce.shoppingproject.core.dataAccess.UserDao;
+import ecommerce.shoppingproject.core.entities.Order;
 import ecommerce.shoppingproject.core.entities.User;
 import ecommerce.shoppingproject.core.utilities.results.DataResult;
 import ecommerce.shoppingproject.core.utilities.results.Result;
@@ -72,7 +74,17 @@ public class UserManager implements UserService{
 		return userDao.findByUseridForCurrentCart(userid);
 	}
 
+	@Override
+	public void updateUser(String firstName,String lastName,String email,String phoneNumber,String gender, long userid) {
+		// TODO Auto-generated method stub
+		userDao.updateUser(firstName,lastName,email,phoneNumber,gender,userid);
+	}
 
+	@Override
+	public void updateAddress(String address, Long userid) {
+		// TODO Auto-generated method stub
+		userDao.updateAddress(address, userid);
+	}
 
 
 	/*@Override

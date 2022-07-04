@@ -90,6 +90,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     		.permitAll()
     		.antMatchers(HttpMethod.PUT, "/**")
     		.permitAll()
+    		.antMatchers(HttpMethod.POST, "/**")
+    		.permitAll()
     		.antMatchers(HttpMethod.POST, "/api/products/add")
     		.permitAll()
     		.antMatchers("/auth/**")

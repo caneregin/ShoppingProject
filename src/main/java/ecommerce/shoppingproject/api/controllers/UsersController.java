@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ecommerce.shoppingproject.business.abstracts.UserService;
+import ecommerce.shoppingproject.core.entities.Order;
 import ecommerce.shoppingproject.core.entities.User;
 import ecommerce.shoppingproject.core.utilities.results.DataResult;
 import ecommerce.shoppingproject.core.utilities.results.ErrorDataResult;
@@ -52,9 +53,19 @@ public class UsersController {
 		return userService.findByUserid(userid);	
 	}
 	@PutMapping("/updateCart")
-	public void updateCart(@RequestBody String currentCart,@RequestParam Long userid) {
+	public void updateCart(@RequestBody(required = false) String currentCart,@RequestParam Long userid) {
 		userService.updateCart(currentCart, userid);
 		System.out.println(currentCart+userid);
+	}
+	@PutMapping("/updateAddress")
+	public void updateAddress(@RequestBody String address,@RequestParam Long userid) {
+		userService.updateAddress(address, userid);
+		System.out.println(address+userid);
+	}
+	@PutMapping("/updateUser")
+	public void updateUser(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String email,@RequestParam String phoneNumber,@RequestParam String gender, @RequestParam Long userid) {
+		userService.updateUser(firstName,lastName,email,phoneNumber,gender,userid);
+		//System.out.println(firstName+lastName+email+phoneNumber+gender+userid);
 	}
 	@GetMapping("/findByUseridForCurrentCart")
 	public String findByUseridForCurrentCart(@RequestParam Long userid){

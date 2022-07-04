@@ -20,6 +20,16 @@ public interface UserDao extends JpaRepository<User,Long>{
 	@Query("UPDATE User SET currentCart = :currentCart where userid = :userid")
 	public void updateCart(String currentCart, long userid);
 	
+	@Modifying
+	@Transactional
+	@Query("UPDATE User SET address = :address where userid = :userid")
+	public void updateAddress(String address, long userid);
+	
+	@Modifying
+	@Transactional
+	@Query("UPDATE User SET firstName = :firstName, lastName = :lastName, email = :email, phoneNumber = :phoneNumber, gender = :gender where userid = :userid")
+	public void updateUser(String firstName,String lastName,String email,String phoneNumber,String gender, long userid);
+	
 	@Query("Select currentCart FROM User u where userid = :userid")
 	String findByUseridForCurrentCart(Long userid);
 }
