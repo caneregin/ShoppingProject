@@ -66,6 +66,12 @@ public class AuthController {
 		User user = new User();
 		user.setUserName(registerRequest.getUserName());
 		user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
+		user.setFirstName(registerRequest.getFirstName());
+		user.setLastName(registerRequest.getLastName());
+		user.setEmail(registerRequest.getEmail());
+		user.setAddress(registerRequest.getAddress());
+		user.setPhoneNumber(registerRequest.getPhoneNumber());
+		user.setGender(registerRequest.getGender());
 		userService.saveOneUser(user);
 		authResponse.setMessage("User successfully registered.");
 		return new ResponseEntity<>(authResponse, HttpStatus.CREATED);		
