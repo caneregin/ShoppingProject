@@ -20,7 +20,7 @@ Bölüm 1
 
 Project Explorer
 
-ABURAYA RESIM GELECEK
+![1](https://user-images.githubusercontent.com/36435160/179939569-9eff881e-7d0a-49d1-b7cc-904667c8be7a.png)
 
 Mavi kutucuklu alan
 Api controller yönetildiği alandır. POST, GET, UPDATE, DELETE methodları burada yazılmıştır. Tüm sayfa istekleri, veri giriş istekleri, veri değişikliği ve silinme
