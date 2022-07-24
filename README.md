@@ -1,22 +1,22 @@
 # ShoppingProject
-Enterprise E-Commerce Shopping Project
+## Enterprise E-Commerce Shopping Project
 
-E-Ticaret Alışveriş Projesi - Kurumsal Mimari ile
+## E-Ticaret Alışveriş Projesi - Kurumsal Mimari ile
 
-Bu proje bir E-Ticret alışveriş projesi hakkındadır. Kurumsal mimariye uygun ve SOLID prensiplerine göre yazılmıştır.
-Bu proje Back-end tarafıdır. Java Spring Boot JPA ile yazılmıştır. PostgreSQL ve REST API kullanılmıştır. JSON Web Token kullanılmıştır.
-Projede yapılan güncellemeler bölüm bölüm eklenecektir. 
+### Bu proje bir E-Ticret alışveriş projesi hakkındadır. Kurumsal mimariye uygun ve SOLID prensiplerine göre yazılmıştır.
+### Bu proje Back-end tarafıdır. Java Spring Boot JPA ile yazılmıştır. PostgreSQL ve REST API kullanılmıştır. JSON Web Token kullanılmıştır.
+### Projede yapılan güncellemeler bölüm bölüm eklenecektir. 
 
 ## Bölüm 1
-1.User, Product, Category, Order, RefreshToken nesneleri eklendi(Entity)
+#### 1.User, Product, Category, Order, RefreshToken nesneleri eklendi(Entity)
   User--> Id, Username, Password, Firstname, Lastname, Email, Address, Userphoto, Currentcart, Authoritylevel, Ohonenumber, Gender
   Product--> Id, Name, Detail, Image, UnitPrice, Units_In_Stock, CategoryId
   Category--> Id, Categoryname, products
   Order--> Id, Ordercontent, Orderstate, Orderdate, user
   RefreshToken --> Id, User, Token, Expirydate
-2.PostgreSQL tarafında veribanı oluşturuldu.
-3.User, Product, Order, RefreshToken nesneleri için service, manager ve controller oluşturuldu.
-4.Sisteme yeni veri eklendiğinde seçilmiş verilerin boş olmaması ve veriye göre sadece rakam veya harf ayrımı yapılmıştır.
+#### 2.PostgreSQL tarafında veribanı oluşturuldu.
+#### 3.User, Product, Order, RefreshToken nesneleri için service, manager ve controller oluşturuldu.
+#### 4.Sisteme yeni veri eklendiğinde seçilmiş verilerin boş olmaması ve veriye göre sadece rakam veya harf ayrımı yapılmıştır.
 
 ### Project Explorer
 
